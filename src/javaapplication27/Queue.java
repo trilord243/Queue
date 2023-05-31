@@ -44,22 +44,18 @@ public class Queue {
         this.length = length;
     }
     
-    public void enqueue(int value){
-        Node newNode=new Node(value);
-        if(first==null){
-            setFirst(newNode);
-            setLast(newNode);
-        
-        }else{
-            ;
-            
-            getLast().setNext(newNode);
-            setLast(newNode);
-            
-        
-        }length++;
-    
+   public void enqueue(int value){
+    Node newNode = new Node(value);
+    if(first == null){
+        setFirst(newNode);
+        setLast(newNode);
+    }else{
+        getLast().setNext(newNode);
+        setLast(newNode);
     }
+    length++;
+}
+
     
    public Node deQueque() {
     if(first == null) {
