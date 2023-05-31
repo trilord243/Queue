@@ -61,31 +61,24 @@ public class Queue {
     
     }
     
-    public Node deQueque(){
-        if(first==null ){
-            
-            return null;
-           
-        
-        
-        }else if(length==1){
-            length--;
-            return getFirst();
-        
-        
-        }else{
-        
-            Node temp=getFirst();
-            setFirst(getFirst().getNext());
-            temp.setNext(null);
-            length--;
-            return temp;
-        
-        }
-
-
-
+   public Node deQueque() {
+    if(first == null) {
+        return null;
+    } else if(length == 1) {
+        Node temp = getFirst();
+        setFirst(null);
+        setLast(null);
+        length--;
+        return temp;
+    } else {
+        Node temp = getFirst();
+        setFirst(getFirst().getNext());
+        temp.setNext(null);
+        length--;
+        return temp;
+    }
 }
+
     public void print(){
         Node aux=getFirst();
         while(aux!=null){
